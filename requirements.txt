@@ -1,0 +1,13 @@
+# Astronomer Runtime includes Airflow and common providers
+# Add any additional dependencies here
+
+# Additional providers for demo DAGs
+apache-airflow-providers-snowflake==5.1.0
+apache-airflow-providers-databricks==4.3.0
+apache-airflow-providers-amazon==8.2.0
+apache-airflow-providers-slack==7.3.0
+
+# Data processing libraries
+pandas==2.0.3
+numpy==1.24.3
+requests==2.31.0

@@ -24,7 +24,7 @@ dag = DAG(
     'parallel_sales_analytics_to_snowflake',
     default_args=default_args,
     description='Parallel analytics on sales CSV, then load summary to Snowflake',
-    schedule_interval='@daily',
+    schedule='@daily',
     catchup=False,
     tags=['demo', 'parallel', 'analytics']
 )

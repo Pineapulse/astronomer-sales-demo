@@ -31,6 +31,8 @@ dag = DAG(
 
 start = DummyOperator(task_id='start', dag=dag)
 
+#Parallel steps
+
 @task(dag=dag)
 def read_sales_data():
     df = pd.read_csv(CSV_PATH)

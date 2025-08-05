@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.decorators import task
-from airflow.operators.dummy import DummyOperator
+from airflow.operators.empty import EmptyOperator
 import pandas as pd
 
 # --- CONFIG ---
@@ -29,7 +29,7 @@ dag = DAG(
     tags=['demo', 'parallel', 'analytics']
 )
 
-start = DummyOperator(task_id='start', dag=dag)
+start = EmptyOperator(task_id='start', dag=dag)
 
 #Parallel steps
 
@@ -120,7 +120,7 @@ def load_to_snowflake(summary_csv_path):
         hook.run(insert_sql)
     return f"Loaded {len(rows)} rows into {table}"
 
-end = DummyOperator(task_id='end', dag=dag)
+end = EmptyOperator(task_id='end', dag=dag)
 
 sales_data = read_sales_data()
 prod_summary = product_sales_summary(sales_data)

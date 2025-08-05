@@ -1,4 +1,4 @@
-FROM quay.io/astronomer/astro-runtime:10.0.0
+FROM quay.io/astronomer/astro-runtime:3.0-6
 
 ENV AIRFLOW__WEBSERVER__CONNECTIONS__ALLOW_CONNECTION_TEST=True
 
